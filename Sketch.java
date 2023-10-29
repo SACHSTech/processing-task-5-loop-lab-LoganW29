@@ -1,13 +1,13 @@
 import processing.core.PApplet;
 
 public class Sketch extends PApplet {
-	
-	
-  /**
-   * Called once at the beginning of execution, put your size all in this method
+	/**
+   * A program that uses for loops, if statements and nested loops to form interesting patterns.
+   * @author: L. Wong
    */
+
   public void settings() {
-	// put your size call here
+	// size call here
     size(1200, 600);
   }
 
@@ -35,9 +35,7 @@ public class Sketch extends PApplet {
     draw_section7();
     draw_section8();
 
-    
   }
-
 
   /**
    * Draw the outlines for all sections
@@ -163,30 +161,69 @@ public class Sketch extends PApplet {
   public void draw_section5(){
     int intX = 0;
     int intY = 0;
+  
+    for(int intColumn = 0; intColumn < 60; intColumn += 2){
+      for(int intRow = 0; intRow < intColumn; intRow += 2){
+        intX = 3 + intRow * 5;  
+        intY = 3 + intColumn * 5; 
 
-    for(int intRow = 0; intRow < 58; intRow += 2){
-      for(int intColumn = 0; intColumn < 58; intColumn += 2){
-        intX = 12 + intRow * 5;  
-        intY = 12 + intColumn * 5; 
+        fill(255);
+        noStroke();
+        rect(intX, intY, 5, 5);
+      }
+    }   
+  }
+
+  public void draw_section6(){
+    int intX = 0;
+    int intY = 0;
+  
+    for(int intColumn = 0; intColumn < 60; intColumn += 2){
+      for(int intRow = 0; intRow <= intColumn; intRow += 2){
+        intX = 300 + 3 + intRow * 5;  
+        intY = 3 + intColumn * 5; 
 
         fill(255);
         noStroke();
         rect(intX, intY, 5, 5);
       }
 
-    }
-  }
-
-  public void draw_section6(){
-
+    }   
   }
 
   public void draw_section7(){
+    int intX = 0;
+    int intY = 0;
+  
+    for(int intRow = 0; intRow < 60; intRow += 2){
+      for(int intColumn = 0; intColumn < 60 - intRow; intColumn += 2){
+        intX = 3+600 + intRow * 5;  
+        intY = 3 + intColumn * 5; 
+
+        fill(255);
+        noStroke();
+        rect(intX, intY, 5, 5);
+      }
+    }   
 
   }
   
   public void draw_section8(){
+    int intX = 0;
+    int intY = 0;
 
+    for(int intRow = 0; intRow <= 60; intRow += 2){
+      for(int intColumn = 0; intColumn <= intRow; intColumn += 2){
+        intX = 900 + 3 + intRow * 5;  
+        intY = 3 + intColumn * 5; 
+
+
+        fill(255);
+        noStroke();
+        rect(intX, intY, 5, 5);
+      }
+
+    }   
   }
 
 }
