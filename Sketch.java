@@ -162,8 +162,8 @@ public class Sketch extends PApplet {
     int intX = 0;
     int intY = 0;
   
-    for(int intColumn = 0; intColumn < 60; intColumn += 2){
-      for(int intRow = 0; intRow < intColumn; intRow += 2){
+    for(int intRow = 60; intRow > 0; intRow -= 2){
+      for(int intColumn = 60; intColumn > 58 - intRow; intColumn -= 2){
         intX = 3 + intRow * 5;  
         intY = 3 + intColumn * 5; 
 
@@ -197,7 +197,7 @@ public class Sketch extends PApplet {
   
     for(int intRow = 0; intRow < 60; intRow += 2){
       for(int intColumn = 0; intColumn < 60 - intRow; intColumn += 2){
-        intX = 3+600 + intRow * 5;  
+        intX = 3 + 600 + intRow * 5;  
         intY = 3 + intColumn * 5; 
 
         fill(255);
